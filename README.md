@@ -1,0 +1,2 @@
+# nukabot
+Nuka Bot scripts
