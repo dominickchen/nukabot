@@ -6,12 +6,10 @@ mysql_connect ('ttjs.ctimigi6vjbg.ap-northeast-1.rds.amazonaws.com', 'root', 'me
 mysql_select_db ('nuka') or die ('Could not select database on TTJS');
 mysql_query ("SET NAMES utf8");
 
-$h = $_GET['h'];
-$t = $_GET['t'];
-$m = $_GET['m'];
+$cond = $_GET['cond'];
 
 $insert_ttdata = <<<EOD
-	INSERT IGNORE INTO humidityTemperature (humidity, temperature, moisture) VALUES ($h, $t, $m)
+	INSERT IGNORE INTO set_01 (conductivity) VALUES ($cond)
 EOD;
 
 mysql_query ($insert_ttdata) or die ('error at insert date record: ' . mysql_error ());
